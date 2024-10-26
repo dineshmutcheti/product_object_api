@@ -8,6 +8,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the Product API!');
+});
+
 app.use('/api/products', productRoutes);
 
 const PORT = process.env.PORT || 3000;
